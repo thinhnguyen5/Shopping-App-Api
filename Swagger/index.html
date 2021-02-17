@@ -1,0 +1,618 @@
+<!doctype html>
+<html>
+  <head>
+    <title>SneakerApi</title>
+    <style type="text/css">
+      body {
+      	font-family: Trebuchet MS, sans-serif;
+      	font-size: 15px;
+      	color: #444;
+      	margin-right: 24px;
+      }
+      
+      h1	{
+      	font-size: 25px;
+      }
+      h2	{
+      	font-size: 20px;
+      }
+      h3	{
+      	font-size: 16px;
+      	font-weight: bold;
+      }
+      hr	{
+      	height: 1px;
+      	border: 0;
+      	color: #ddd;
+      	background-color: #ddd;
+      }
+      
+      .app-desc {
+        clear: both;
+        margin-left: 20px;
+      }
+      .param-name {
+        width: 100%;
+      }
+      .license-info {
+        margin-left: 20px;
+      }
+      
+      .license-url {
+        margin-left: 20px;
+      }
+      
+      .model {
+        margin: 0 0 0px 20px;
+      }
+      
+      .method {
+        margin-left: 20px;
+      }
+      
+      .method-notes	{
+      	margin: 10px 0 20px 0;
+      	font-size: 90%;
+      	color: #555;
+      }
+      
+      pre {
+        padding: 10px;
+        margin-bottom: 2px;
+      }
+      
+      .http-method {
+       text-transform: uppercase;
+      }
+      
+      pre.get {
+        background-color: #0f6ab4;
+      }
+      
+      pre.post {
+        background-color: #10a54a;
+      }
+      
+      pre.put {
+        background-color: #c5862b;
+      }
+      
+      pre.delete {
+        background-color: #a41e22;
+      }
+      
+      .huge	{
+      	color: #fff;
+      }
+      
+      pre.example {
+        background-color: #f3f3f3;
+        padding: 10px;
+        border: 1px solid #ddd;
+      }
+      
+      code {
+        white-space: pre;
+      }
+      
+      .nickname {
+        font-weight: bold;
+      }
+      
+      .method-path {
+        font-size: 1.5em;
+        background-color: #0f6ab4;
+      }
+      
+      .up {
+        float:right;
+      }
+      
+      .parameter {
+        width: 500px;
+      }
+      
+      .param {
+        width: 500px;
+        padding: 10px 0 0 20px;
+        font-weight: bold;
+      }
+      
+      .param-desc {
+        width: 700px;
+        padding: 0 0 0 20px;
+        color: #777;
+      }
+      
+      .param-type {
+        font-style: italic;
+      }
+      
+      .param-enum-header {
+      width: 700px;
+      padding: 0 0 0 60px;
+      color: #777;
+      font-weight: bold;
+      }
+      
+      .param-enum {
+      width: 700px;
+      padding: 0 0 0 80px;
+      color: #777;
+      font-style: italic;
+      }
+      
+      .field-label {
+        padding: 0;
+        margin: 0;
+        clear: both;
+      }
+      
+      .field-items	{
+      	padding: 0 0 15px 0;
+      	margin-bottom: 15px;
+      }
+      
+      .return-type {
+        clear: both;
+        padding-bottom: 10px;
+      }
+      
+      .param-header {
+        font-weight: bold;
+      }
+      
+      .method-tags {
+        text-align: right;
+      }
+      
+      .method-tag {
+        background: none repeat scroll 0% 0% #24A600;
+        border-radius: 3px;
+        padding: 2px 10px;
+        margin: 2px;
+        color: #FFF;
+        display: inline-block;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+  <h1>SneakerApi</h1>
+    <div class="app-desc">Shopping App Api</div>
+    <div class="app-desc">More information: <a href="https://helloreverb.com">https://helloreverb.com</a></div>
+    <div class="app-desc">Contact Info: <a href="nguyenducthinh05072000@gmail.com">nguyenducthinh05072000@gmail.com</a></div>
+    <div class="app-desc">Version: 1.0</div>
+    
+    <div class="license-info">All rights reserved</div>
+    <div class="license-url">http://apache.org/licenses/LICENSE-2.0.html</div>
+  <h2>Access</h2>
+
+  <h2><a name="__Methods">Methods</a></h2>
+  [ Jump to <a href="#__Models">Models</a> ]
+
+  <h3>Table of Contents </h3>
+  <div class="method-summary"></div>
+  <h4><a href="#Default">Default</a></h4>
+  <ul>
+  <li><a href="#addInventory"><code><span class="http-method">post</span> /items</code></a></li>
+  <li><a href="#deleteitemsid"><code><span class="http-method">delete</span> /items/{id}</code></a></li>
+  <li><a href="#getItemsDateOfPosting"><code><span class="http-method">get</span> /items/{dateofposting}</code></a></li>
+  <li><a href="#getItemsId"><code><span class="http-method">get</span> /items/{id}</code></a></li>
+  <li><a href="#getItemsLocation"><code><span class="http-method">get</span> /items/{location}</code></a></li>
+  <li><a href="#putitemsid"><code><span class="http-method">put</span> /items/{id}</code></a></li>
+  <li><a href="#searchItems"><code><span class="http-method">get</span> /items</code></a></li>
+  </ul>
+
+  <h1><a name="Default">Default</a></h1>
+  <div class="method"><a name="addInventory"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /items</code></pre></div>
+    <div class="method-summary">adds a new item (<span class="nickname">addInventory</span>)</div>
+    <div class="method-notes">Adds an item to the system</div>
+
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    item created
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    Invalid input, object invalid&#x27;
+        <a href="#"></a>
+    <h4 class="field-label">409</h4>
+    An existing item already exists
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="deleteitemsid"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /items/{id}</code></pre></div>
+    <div class="method-summary">Delete an item by Id (<span class="nickname">deleteitemsid</span>)</div>
+    <div class="method-notes">Unique Id for an item</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Successfully delete
+        <a href="#"></a>
+    <h4 class="field-label">400</h4>
+    Unsuccessfully delete
+        <a href="#"></a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getItemsDateOfPosting"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /items/{dateofposting}</code></pre></div>
+    <div class="method-summary">Your GET endpoint (<span class="nickname">getItemsDateOfPosting</span>)</div>
+    <div class="method-notes">Date of the post</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">dateofposting (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#ItemsData">ItemsData</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "delivery" : "Shipping",
+  "seller_name" : "Thinh Nguyen Duc",
+  "price" : 600,
+  "description" : "New",
+  "location" : "Ha Noi, Vn",
+  "id" : 66886688668888,
+  "contact_info" : "0355928428",
+  "created_date" : "222021-01-26T16:11:12.406Z",
+  "title" : "Bitis Hunter",
+  "catergory" : "Sneaker"
+}, {
+  "delivery" : "Shipping",
+  "seller_name" : "Thinh Nguyen Duc",
+  "price" : 600,
+  "description" : "New",
+  "location" : "Ha Noi, Vn",
+  "id" : 66886688668888,
+  "contact_info" : "0355928428",
+  "created_date" : "222021-01-26T16:11:12.406Z",
+  "title" : "Bitis Hunter",
+  "catergory" : "Sneaker"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Date for the posting item
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getItemsId"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /items/{id}</code></pre></div>
+    <div class="method-summary">Get an item by Id (<span class="nickname">getItemsId</span>)</div>
+    <div class="method-notes">Get a items by id</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Data for the selected item
+        <a href="#"></a>
+    <h4 class="field-label">404</h4>
+    Item not found
+        <a href="#ItemsData">ItemsData</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="getItemsLocation"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /items/{location}</code></pre></div>
+    <div class="method-summary">Your GET endpoint (<span class="nickname">getItemsLocation</span>)</div>
+    <div class="method-notes">Location</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">location (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200">inline_response_200</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "" : [ {
+    "delivery" : "Shipping",
+    "seller_name" : "Thinh Nguyen Duc",
+    "price" : 600,
+    "description" : "New",
+    "location" : "Ha Noi, Vn",
+    "id" : 66886688668888,
+    "contact_info" : "0355928428",
+    "created_date" : "222021-01-26T16:11:12.406Z",
+    "title" : "Bitis Hunter",
+    "catergory" : "Sneaker"
+  }, {
+    "delivery" : "Shipping",
+    "seller_name" : "Thinh Nguyen Duc",
+    "price" : 600,
+    "description" : "New",
+    "location" : "Ha Noi, Vn",
+    "id" : 66886688668888,
+    "contact_info" : "0355928428",
+    "created_date" : "222021-01-26T16:11:12.406Z",
+    "title" : "Bitis Hunter",
+    "catergory" : "Sneaker"
+  } ]
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Requirement successful
+        <a href="#inline_response_200">inline_response_200</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="putitemsid"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="put"><code class="huge"><span class="http-method">put</span> /items/{id}</code></pre></div>
+    <div class="method-summary">Change the information of an item (<span class="nickname">putitemsid</span>)</div>
+    <div class="method-notes">Unique Id for an item</div>
+
+    <h3 class="field-label">Path parameters</h3>
+    <div class="field-items">
+      <div class="param">id (required)</div>
+      
+            <div class="param-desc"><span class="param-type">Path Parameter</span> &mdash;  </div>    </div>  <!-- field-items -->
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#ItemsData">ItemsData</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "delivery" : "Shipping",
+  "seller_name" : "Thinh Nguyen Duc",
+  "price" : 600,
+  "description" : "New",
+  "location" : "Ha Noi, Vn",
+  "id" : 66886688668888,
+  "contact_info" : "0355928428",
+  "created_date" : "222021-01-26T16:11:12.406Z",
+  "title" : "Bitis Hunter",
+  "catergory" : "Sneaker"
+}, {
+  "delivery" : "Shipping",
+  "seller_name" : "Thinh Nguyen Duc",
+  "price" : 600,
+  "description" : "New",
+  "location" : "Ha Noi, Vn",
+  "id" : 66886688668888,
+  "contact_info" : "0355928428",
+  "created_date" : "222021-01-26T16:11:12.406Z",
+  "title" : "Bitis Hunter",
+  "catergory" : "Sneaker"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    Successfully update
+        
+    <h4 class="field-label">400</h4>
+    Unsuccessfully update
+        
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="searchItems"></a>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /items</code></pre></div>
+    <div class="method-summary">get all items (<span class="nickname">searchItems</span>)</div>
+    <div class="method-notes">get all items&#x27; data and show</div>
+
+
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      array[<a href="#ItemsData">ItemsData</a>]
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>[ {
+  "delivery" : "Shipping",
+  "seller_name" : "Thinh Nguyen Duc",
+  "price" : 600,
+  "description" : "New",
+  "location" : "Ha Noi, Vn",
+  "id" : 66886688668888,
+  "contact_info" : "0355928428",
+  "created_date" : "222021-01-26T16:11:12.406Z",
+  "title" : "Bitis Hunter",
+  "catergory" : "Sneaker"
+}, {
+  "delivery" : "Shipping",
+  "seller_name" : "Thinh Nguyen Duc",
+  "price" : 600,
+  "description" : "New",
+  "location" : "Ha Noi, Vn",
+  "id" : 66886688668888,
+  "contact_info" : "0355928428",
+  "created_date" : "222021-01-26T16:11:12.406Z",
+  "title" : "Bitis Hunter",
+  "catergory" : "Sneaker"
+} ]</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="header">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    search results matching criteria
+        
+  </div> <!-- method -->
+  <hr/>
+
+  <h2><a name="__Models">Models</a></h2>
+  [ Jump to <a href="#__Methods">Methods</a> ]
+
+  <h3>Table of Contents</h3>
+  <ol>
+    <li><a href="#ItemsData"><code>ItemsData</code> - ItemsData</a></li>
+    <li><a href="#inline_response_200"><code>inline_response_200</code></a></li>
+  </ol>
+
+  <div class="model">
+    <h3><a name="ItemsData"><code>ItemsData</code> - ItemsData</a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param">id </div><div class="param-desc"><span class="param-type"><a href="#BigDecimal">BigDecimal</a></span> Unique id to identify an item </div>
+          <div class="param-desc"><span class="param-type">example: 66886688668888</span></div>
+<div class="param">title </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The title for the item posting </div>
+          <div class="param-desc"><span class="param-type">example: Bitis Hunter</span></div>
+<div class="param">description </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> item&#x27;s description </div>
+          <div class="param-desc"><span class="param-type">example: New</span></div>
+<div class="param">catergory </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> Kind of product </div>
+          <div class="param-desc"><span class="param-type">example: Sneaker</span></div>
+<div class="param">location </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> The location of item selling </div>
+          <div class="param-desc"><span class="param-type">example: Ha Noi, Vn</span></div>
+<div class="param">price </div><div class="param-desc"><span class="param-type"><a href="#integer">Integer</a></span> The cost of item format: int32</div>
+          <div class="param-desc"><span class="param-type">example: 600</span></div>
+<div class="param">delivery </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> transportation type </div>
+          <div class="param-desc"><span class="param-type">example: Shipping</span></div>
+<div class="param">seller_name </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> name of seller </div>
+          <div class="param-desc"><span class="param-type">example: Thinh Nguyen Duc</span></div>
+<div class="param">contact_info </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> contaction </div>
+          <div class="param-desc"><span class="param-type">example: 0355928428</span></div>
+<div class="param">created_date </div><div class="param-desc"><span class="param-type"><a href="#string">String</a></span> the posted date of item </div>
+          <div class="param-desc"><span class="param-type">example: 222021-01-26T16:11:12.406Z</span></div>
+    </div>  <!-- field-items -->
+  </div>
+  <div class="model">
+    <h3><a name="inline_response_200"><code>inline_response_200</code></a> <a class="up" href="#__Models">Up</a></h3>
+    
+    <div class="field-items">
+      <div class="param"> (optional)</div><div class="param-desc"><span class="param-type"><a href="#ItemsData">array[ItemsData]</a></span>  </div>
+    </div>  <!-- field-items -->
+  </div>
+  </body>
+</html>
