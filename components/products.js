@@ -130,4 +130,35 @@ router.delete('/:id', (req, res) => {
     res.sendStatus(200);
 });
 
+//update posting
+router.put('/:id', multerUpload.array('myFiles', 4), (req, res) => {
+    req.files.forEach(f => {
+        fs.renameSync(f.path, './uploads/' + f.originalname)
+    })
+    const tam = [];
+    req.files.forEach(i => tam.push(i.originalname));
+
+    if(object[(req.params.id) - 1]) {
+        var date = new Date();
+        object[(req.params.id) - 1] = {
+            id: req.params.id,
+            title: req.body.title,
+            category: req.body.category,
+            image: tam,
+            price: req.body.price,
+            brand: req.body.brand,
+            description: req.body.description,
+            dateOfPosting: date,
+            location: req.body.location,
+            DeliveryType: req.body.DeliveryType,
+            username: req.body.username,
+            phone: req.body.phone
+        }
+        res.status(200).send(products);
+    }
+    else {
+        res.status(500).json({status: "no result"});
+    }
+});
+
 module.exports = router;
