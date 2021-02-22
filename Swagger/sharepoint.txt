@@ -1,0 +1,1 @@
+https://app.swaggerhub.com/apis/thinh-nguyen/shopping-openapi/1.0
