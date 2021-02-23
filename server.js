@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
-app.set('port', (process.env.PORT || 80));
+app.set('port', (process.env.PORT || 3000));
 
 app.get('/', (req, res) => res.send('unprotected'));
 
