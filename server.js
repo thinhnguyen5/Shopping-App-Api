@@ -33,9 +33,7 @@ passport.use(new BasicStrategy(
   }
 ))
 
-app.get('/test',
-(req,res) => {res.send('test')}
-)
+
 
 app.get('/protected',
   passport.authenticate('basic', {session: false}),
@@ -48,6 +46,11 @@ app.use('/products', productComponent );
 app.use('/users', userComponent);
 
 let serverInstance = null;
+
+app.get('/hello', function(req, res) {
+  res.send("Hello class, this is automatic deploy demo");
+});
+
 
 module.exports = {
   start: function() {
