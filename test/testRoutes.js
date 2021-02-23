@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = require('chai').expect;
 chai.use(require('chai-http'));
-const server = require('../server');
+const server = require('../index');
 
 describe('Test routes', function() {
     before(function() {
