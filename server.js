@@ -52,7 +52,7 @@ let serverInstance = null;
 module.exports = {
   start: function() {
     serverInstance = app.get('port', function() {
-      console.log('Example app listening at http://localhost:', app.get('port'));
+      console.log('Node app is running on port', app.get('port'));
     })
   },
   close: function() {
