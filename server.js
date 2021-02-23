@@ -47,7 +47,7 @@ app.use('/users', userComponent);
 
 let serverInstance = null;
 
-app.get('/hello', function(req, res) {
+app.get('/', function(req, res) {
   res.send("Hello class, this is automatic deploy demo");
 });
 
