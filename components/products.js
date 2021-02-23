@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const fs = require('fs');
-const multer = require('multer');
-const multerUpload = multer({dest: 'uploads/'});
+var express = require('express');
+var router = express.Router();
+var fs = require('fs');
+var multer = require('multer');
+var multerUpload = multer({dest: 'uploads/'});
 
 let products= [
     {

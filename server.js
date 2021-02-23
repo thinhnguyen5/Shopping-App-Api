@@ -1,14 +1,13 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var app = express();
 // const port = 3000;
-const productComponent = require('./components/products');
-const userComponent = require('./components/users');
-
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
-const BasicStrategy = require('passport-http').BasicStrategy;
+var productComponent = require('./components/products');
+var userComponent = require('./components/users');
+var bodyParser = require('body-parser');
+var cors = require('cors');
+var bcrypt = require('bcryptjs');
+var passport = require('passport');
+var BasicStrategy = require('passport-http').BasicStrategy;
 
 app.use(express.json());
 app.use(bodyParser.json());

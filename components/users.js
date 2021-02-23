@@ -1,8 +1,8 @@
-const express = require('express');
-const router = express.Router();
-const bcrypt = require('bcryptjs');
-const passport = require('passport');
-const BasicStrategy = require('passport-http').BasicStrategy;
+var express = require('express');
+var router = express.Router();
+var bcrypt = require('bcryptjs');
+var passport = require('passport');
+var BasicStrategy = require('passport-http').BasicStrategy;
 
 let users = [
     {
