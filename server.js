@@ -33,6 +33,10 @@ passport.use(new BasicStrategy(
   }
 ))
 
+app.get('/test',
+(req,res) => {res.send('test')}
+)
+
 app.get('/protected',
   passport.authenticate('basic', {session: false}),
   (req, res) => {res.json({yourProtectedResource: "profit"});
