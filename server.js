@@ -1,7 +1,9 @@
 const express = require('express');
 const app = express();
-const port = 3000;
+// const port = 3000;
+const productComponent = require('./components/products');
 const userComponent = require('./components/users');
+
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
@@ -11,6 +13,8 @@ const BasicStrategy = require('passport-http').BasicStrategy;
 app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
+
+app.set('port', (process.env.PORT || 80));
 
 app.get('/', (req, res) => res.send('unprotected'));
 
@@ -36,14 +40,15 @@ app.get('/protected',
 
 
 //Routes
+app.use('/products', productComponent );
 app.use('/users', userComponent);
 
 let serverInstance = null;
 
 module.exports = {
   start: function() {
-    serverInstance = app.listen(port, () => {
-      console.log(`Example app listening at http://localhost:${port}`)
+    serverInstance = app.get('port', function() {
+      console.log('Example app listening at http://localhost:', app.get('port'));
     })
   },
   close: function() {
