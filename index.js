@@ -3,7 +3,6 @@ const app = express();
 const port = 3000;
 const productComponent = require('./components/products');
 const userComponent = require('./components/users');
-
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcryptjs');
