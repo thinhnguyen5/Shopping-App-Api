@@ -13,7 +13,7 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(cors());
 
-app.get('/', (req, res) => res.send('Hello, I am Thinh Nguyen from Din19SP and my group mate is Du Pham'));
+app.get('/', (req, res) => res.send('Hello, I am Thinh Nguyen from Din19SP and my group mate is Du Pham. Nice to meet you! Have a nice day!'));
 
 passport.use(new BasicStrategy(
   function(username, password, done) {
