@@ -14,7 +14,7 @@ let users = [
     {
         id: 2,
         userName: "Dupham",
-        assword: 'duphampassword', 
+        password: 'duphampassword', 
     }
 ]
 
