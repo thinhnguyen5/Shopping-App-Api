@@ -13,7 +13,7 @@ let users = [
 
     {
         id: 2,
-        userName: "Dupham",
+        username: "Dupham",
         password: 'duphampassword', 
     }
 ]
