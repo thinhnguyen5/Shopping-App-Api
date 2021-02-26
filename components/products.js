@@ -58,7 +58,7 @@ let products= [
     },
     {
         id: 4,
-        title: 'clothes',
+        title: 'Clothes',
         category: 'Pant',
         image: [ 'https://www.target.com.au/medias/static_content/product/images/full/76/39/A1487639.jpg?impolicy=mobile_hero',
         'https://www.target.com.au/medias/static_content/product/images/full/76/39/A1487639.jpg?impolicy=mobile_hero',
