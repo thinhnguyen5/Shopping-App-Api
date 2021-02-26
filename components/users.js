@@ -11,11 +11,6 @@ let users = [
         password: '$2y$06$PhZ74dT8/5g6B8SgssFq6ey4ojLxmP6pos2DcevMUGw25Vc9jGEou', 
     },
 
-    {
-        id: 2,
-        username: "Dupham",
-        password: 'duphampassword', 
-    }
 ]
 
 router.get('/', (req, res) => {
